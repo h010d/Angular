@@ -1,7 +1,7 @@
 const q = 1;
 //string
 let str: string = 'string';
-// number
+// numberyn
 let num: number = 10;
 //boolean
 let isTrue: boolean = true;
