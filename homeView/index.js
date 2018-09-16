@@ -42,8 +42,9 @@ function getMyName() {
 }
 
 function getMyAge() {
-    return myAge;
-    // return myName;
-}
-console.log('myName:', getMyName());
-console.log('myAge:', getMyAge());
+    function getMyAge() {
+        return myAge;
+        // return myName;
+    }
+    console.log('myName:', getMyName());
+    console.log('myAge:', getMyAge());
