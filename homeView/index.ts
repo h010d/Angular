@@ -3,7 +3,7 @@ const q = 1;
 let str: string = 'string';
 // numberyn
 let num: number = 10;
-//boolean
+//booleanhh
 let isTrue: boolean = true;
 let isFalse: boolean = false;
 
