@@ -52,7 +52,7 @@ function getMyAge(): number
 {
 	return myAge;
 	// return myName;
-//	doijoij
+
 }
 console.log('myName:', getMyName());
 console.log('myAge:', getMyAge());
