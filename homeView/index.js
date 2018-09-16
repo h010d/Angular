@@ -11,9 +11,6 @@ var isFalse = false;
 var unknow_first = '1';
 unknow_first = '2';
 var unknow = '1';
-var unknow = '1';
-var unknow = '1';
-var unknow = '1';
 unknow = 1;
 unknow = true;
 num = unknow_first.length;
@@ -39,9 +36,11 @@ var array2 = [true, 'str', 22];
 //  Methods
 var myName = 'WFM';
 var myAge = 50;
+
 function getMyName() {
     return myName;
 }
+
 function getMyAge() {
     return myAge;
     // return myName;
