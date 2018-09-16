@@ -6,6 +6,8 @@ let num: number = 10;
 //boolean
 let isTrue: boolean = true;
 let isFalse: boolean = false;
+let isFalse: boolean = false;
+let isFalse: boolean = false;
 
 // other
 let unknow_first: string | number | boolean = '1';
