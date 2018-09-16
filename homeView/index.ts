@@ -1,9 +1,9 @@
 const q = 1;
 //string
 let str: string = 'string';
-// numberyn
+// number
 let num: number = 10;
-//booleanhh
+//boolean
 let isTrue: boolean = true;
 let isFalse: boolean = false;
 
@@ -39,7 +39,7 @@ let array2: [boolean, string, number] = [true, 'str', 22];
 
 // let array3: Array<number, string> = [1, 'str'];
 
-// ////////////////////////////////////////////////////////////////////////////
+//** //////////////////////////////////////////////////
 //
 //
 //  Methods
