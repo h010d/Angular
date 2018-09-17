@@ -18,4 +18,3 @@ import { MyCustomtwoComponent } from './my-customtwo/my-customtwo.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-           sdfdf
