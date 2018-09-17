@@ -19,8 +19,7 @@ unknow = true;
 num = unknow_first.length;
 console.log('num', num);
 
-// ////////////////////////////////////////////////////////////////////////////
-//
+//** /////////////////////////////////////////////////////
 //
 //  Arrays
 //
@@ -49,11 +48,12 @@ const myAge: number = 50;
 function getMyName(): string {
 	return myName;
 }
-function getMyAge(): number
-{
+
+function getMyAge(): number {
 	return myAge;
 	// return myName;
 
 }
+
 console.log('myName:', getMyName());
 console.log('myAge:', getMyAge());

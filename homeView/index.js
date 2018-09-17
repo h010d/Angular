@@ -15,8 +15,7 @@ unknow = 1;
 unknow = true;
 num = unknow_first.length;
 console.log('num', num);
-// ////////////////////////////////////////////////////////////////////////////
-//
+//** /////////////////////////////////////////////////////
 //
 //  Arrays
 //
@@ -30,17 +29,15 @@ var boolArray2 = [true, false];
 var array = [1, 2, 3, '4'];
 var array2 = [true, 'str', 22];
 // let array3: Array<number, string> = [1, 'str'];
-// ////////////////////////////////////////////////////////////////////////////
+//** //////////////////////////////////////////////////
 //
 //
 //  Methods
 var myName = 'WFM';
 var myAge = 50;
-
 function getMyName() {
     return myName;
 }
-
 function getMyAge() {
     return myAge;
     // return myName;
