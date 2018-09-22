@@ -4,12 +4,41 @@ import {Component} from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+
 })
 export class AppComponent {
   title = 'my first-project test';
 
+  public numArray = [1, 9, 3, 7, 15, 65, 2, 13, 8];
   private stringLengthCounter: number;
 
+  constructor() {
+    this.countStringLength();
+    this.sortMyArray(this.numArray);
+  }
+
+  public sortMyArray(myArray: number[]): number[] {
+    const myNewArray: number[] = [];
+    for (let i = 0; i < myArray.length; i++) {
+      let min = myArray[i];
+      let minIndex = i;
+      for (let j = i + 1; j < myArray.length; j++) {
+        if (myArray[j] < min) {
+          min = myArray[j];
+          minIndex = j;
+
+        }
+
+      }
+      if (i !== minIndex) {
+        const tmp = myArray[i];
+        myArray[i] = myArray[minIndex];
+        myArray[minIndex] = tmp;
+      }
+    }
+    console.log(myArray);
+    return myNewArray;
+  }
   private getSomeString(): any {
     return 1234567;
     // return 'Some string';
@@ -21,7 +50,11 @@ export class AppComponent {
     console.log('this.stringLengthCounter:', this.stringLengthCounter);
   }
 
-  constructor() {
-    this.countStringLength();
-  }
+
+
+//   public sortMyArray(): void {
+//     console.log('hi');
+//   }
+
 }
+
