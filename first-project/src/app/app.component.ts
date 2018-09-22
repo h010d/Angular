@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-project';
+  title = 'my first-project test';
 
   private stringLengthCounter: number;
 
