@@ -1,0 +1,10 @@
+<div class="child-component">
+  <h1>Child header: {{someComponentText || 'Default header'}} </h1><br>
+  <h1>Child header: {{someComponentTextTwo || 'Default header'}} </h1><br>
+  <div>
+
+    <input placeholder="Enter your data" [(ngModel)]="enteredData">
+    <button (click)="passData()">Pass data to parrent</button>
+  </div>
+</div>
+<!-- /.child-component -->

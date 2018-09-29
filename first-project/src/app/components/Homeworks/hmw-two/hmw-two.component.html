@@ -1,0 +1,50 @@
+<h4>Hmw 02. UI sortArray</h4>
+<hr>
+<!--//=====================================//-->
+<form (ngSubmit)="submitForm()" #form="ngForm">
+  <div class="form-group">
+    <label>Сортируемый массив</label>
+    <input type="text"
+           class="form-control"
+           [(ngModel)]="clearFld"
+           name="arr"
+           array
+           #array="ngModel"
+    >
+
+    <button type="button" class="btn btn-primary" (click)="clearField()">Очистить</button>
+  </div>
+  <div class="form-group"><label>Выберите тип сортровки</label>
+    <select
+      class="form-control"
+      [ngModel]="defaultType"
+      name="type"
+    >
+      <option value="bbl">Пузырьковая сортировка</option>
+      <option value="shl">сортировка Шелла</option>
+    </select>
+  </div>
+
+  <!--<div class="radio" *ngFor="let ans of answers">-->
+    <!--<label>-->
+      <!--<input-->
+        <!--type="radio"-->
+        <!--[value]="ans.type"-->
+        <!--[ngModel]="defaultAnswer"-->
+        <!--name="answer"-->
+      <!--&gt; {{ ans.text }}-->
+    <!--</label>-->
+  <!--</div>-->
+  <button class="btn btn-success"
+          type="submit"
+  >Сортировать массив
+  </button>
+  <div *ngIf="isSubmited">
+    Массив отсортирован:
+      <pre>
+        {{ formData }}
+      </pre>
+  </div>
+
+</form>
+

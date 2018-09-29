@@ -3,11 +3,18 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 
 })
 export class AppComponent {
   title = 'my first-project test';
+
+
+  public receivedData: string;
+  public childHeaderText: string;
+  public childHeaderTextTwo: string;
+
+
 
   public numArray = [1, 9, 3, 7, 15, 65, 2, 13, 8];
   private stringLengthCounter: number;
@@ -39,6 +46,7 @@ export class AppComponent {
     console.log(myArray);
     return myNewArray;
   }
+
   private getSomeString(): any {
     return 1234567;
     // return 'Some string';
@@ -51,10 +59,12 @@ export class AppComponent {
   }
 
 
-
 //   public sortMyArray(): void {
 //     console.log('hi');
 //   }
+  public receiveData(myEvent) {
+    this.receivedData = myEvent;
+	}
 
 }
 
