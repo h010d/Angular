@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+/*h1{*/
+  /*color : red !important;*/
+  /*}*/
+p{
+  color: blue;
+  font-size: 19px;
+  }
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
