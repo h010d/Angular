@@ -2,15 +2,11 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <div>Выбранное имя: {{ name }}</div>
+    <app-child [(userName)]="name"></app-child>
+  `
 })
 export class AppComponent {
-  title = 'my-test-bind-project';
-  public receivedData: string;
-
-  public receiveData(data: string): void {
-    this.receivedData = data;
-    console.log('receiveData()');
-  }
+  public name = 'Tom';
 }

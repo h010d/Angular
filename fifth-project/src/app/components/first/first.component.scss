@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  }
+
+
+.wrapper {
+  position: absolute;
+  padding: 10px;
+  display: inline-block;
+  background-color: rgb(46, 46, 46);
+  box-shadow: -5px 5px 20px 0px rgba(46, 46, 46, 0.699);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  min-width: 280px;
+  max-height: 444px;
+  left: auto;
+  right: 10em;
+  top: 10em;
+  bottom: 0;
+
+  }
+.save {
+  height: 110px;
+  padding: 35px 15px;
+  color: #fff;
+  font-size: 38px;
+  font-weight: 100;
+  text-align: right;
+  max-width: 231.359px;
+  }
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  margin: 6px;
+  background: rgb(63, 63, 63);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 200;
+  border: none;
+  }
+
+.btn:hover {
+  cursor: pointer;
+  border: 2px solid white;
+  }
+
+.oper {
+  background: #ff9501;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  color: #ffffff;
+  font-family: helvetica, serif;
+  text-decoration: none;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  }
+
+.oper:hover {
+  background: #dd8100;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f99113), to(#f99113));
+  background: -webkit-linear-gradient(top, #f99113, #f99113);
+  background: -moz-linear-gradient(top, #f99113, #f99113);
+  background: -ms-linear-gradient(top, #f99113, #f99113);
+  background: -o-linear-gradient(top, #f99113, #f99113);
+  background-image: -ms-linear-gradient(top, #f99113 0%, #f99113 100%);
+  color: #ffffff;
+  }
+
+
+
+.btn_nul {
+  width: 110px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  }
+
+.light_oper {
+  background: #a7a7a7;
+  color: #000;
+  font-size: 18px;
+  font-weight: 200;
+  }
+
+button:active,
+button:focus {
+  outline: none;
+  }
+
+button::-moz-focus-inner {
+  border: 0;
+  }
+

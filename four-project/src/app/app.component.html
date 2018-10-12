@@ -1,0 +1,31 @@
+<div *ngIf="!isCustomPropertyBindingActive">
+  <h1>View Encapsulation Sample</h1>
+  <hr>
+  <h1>App Component</h1>
+  <app-second-child></app-second-child>
+  <app-first-child></app-first-child>
+</div>
+
+<div *ngIf="isCustomPropertyBindingActive">
+  <h1>Custom Property binding sample</h1>
+  <hr>
+  <app-data-binding
+    [someComponentText]="childHeaderText"
+    (passDataToParent)="receiveData($event)"
+    [(secondEnteredData)]="receivedSecondData">
+  </app-data-binding>
+
+  <div class="parent-component">
+    <h1>App Component received Data: {{receivedData || 'Nothing received'}}</h1>
+    <h1>Received Second Data: {{receivedSecondData || 'Nothing received'}}</h1>
+    <input placeholder="Child Header" [(ngModel)]="childHeaderText">
+  </div>
+</div>
+
+<p>
+  <button (click)="isCustomPropertyBindingActive = !isCustomPropertyBindingActive">
+    {{isCustomPropertyBindingActive ? 'Show view encapsulation sample' : 'Show property binding sample'}}
+  </button>
+</p>
+
+<app-lifecycle-hooks></app-lifecycle-hooks>

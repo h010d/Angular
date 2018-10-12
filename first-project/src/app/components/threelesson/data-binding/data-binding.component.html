@@ -1,10 +1,11 @@
+<script src="data-binding.component.ts"></script>
 <div class="child-component">
   <h1>Child header: {{someComponentText || 'Default header'}} </h1><br>
-  <h1>Child header: {{someComponentTextTwo || 'Default header'}} </h1><br>
   <div>
 
     <input placeholder="Enter your data" [(ngModel)]="enteredData">
     <button (click)="passData()">Pass data to parrent</button>
+    <input placeholder="Enter your second data" [ngModel]="secondEnteredData" (ngModelChange)="passSecondData($event)">
   </div>
 </div>
 <!-- /.child-component -->

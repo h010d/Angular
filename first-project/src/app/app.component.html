@@ -2,9 +2,9 @@
   <!-- /.wrapper -->
   <h1>h1 style main </h1>
   <div class="parent-component">
-      <h1>App Component received Data: {{receivedData || 'Nothing received'}}</h1>
+    <h1>App Component received Data: {{receivedData || 'Nothing received'}}</h1>
+    <h1>Received Second Data {{ receivedSecondData }}</h1>
     <input placeholder="Child Header" [(ngModel)]="childHeaderText">
-    <input placeholder="Child Header" [(ngModel)]="childHeaderTextTwo">
   </div>
   <!-- /.parent-component -->
 
@@ -12,9 +12,10 @@
   <!--<app-hmw-two></app-hmw-two>-->
   <!--<app-three-lesson></app-three-lesson>-->
   <app-data-binding
-    [someComponentTextTwo]="childHeaderTextTwo"
     [someComponentText]="childHeaderText"
-    (passDataToParent)="receiveData($event)">
+    (passDataToParent)="receiveData($event)"
+    [(secondEnteredData)]="receivedSecondData"
+  >
   </app-data-binding>
 </div>
 

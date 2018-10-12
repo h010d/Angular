@@ -1,26 +1,19 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-child',
-  templateUrl: './child.component.html',
-  styleUrls: ['./child.component.scss']
+  template: `
+    <input [ngModel]="userName" (ngModelChange)="onNameChange($event)" />
+  `
 })
-export class ChildComponent implements OnInit {
+export class ChildComponent {
 
-  @Input() public someComponentText: string;
-  @Output() public passDataToParent = new EventEmitter<string>();
+  @Input() userName: string;
+  @Output() userNameChange = new EventEmitter<string>();
 
-  public enteredData: string;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
-  public passData() {
-    this.passDataToParent.emit(this.enteredData);
-    console.log('passData()');
+  onNameChange(model: string){
+    this.userName = model;
+    this.userNameChange.emit(model);
   }
 
 }

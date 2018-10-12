@@ -12,7 +12,7 @@ export class AppComponent {
 
   public receivedData: string;
   public childHeaderText: string;
-  public childHeaderTextTwo: string;
+  public receivedSecondData: string;
 
 
 
