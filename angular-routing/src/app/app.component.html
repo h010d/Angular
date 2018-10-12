@@ -1,0 +1,20 @@
+<div class="header">
+  <span>Your awesome header</span>
+  <div class="navigation-bar">
+    <a [routerLink]="['']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a [routerLink]="['about']" routerLinkActive="active-link">About </a>
+    <a [routerLink]="['order-data']" routerLinkActive="active-link">Order </a>
+  </div>
+  <!-- /.navigation-bar -->
+</div>
+<!-- /.header -->
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+<!-- /.content -->
+
+<div class="footer">
+  <span>Your awesomwe Footer</span>
+</div>
+<!-- /.footer -->
