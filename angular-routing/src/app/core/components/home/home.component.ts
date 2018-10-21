@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { Router} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -19,13 +19,15 @@ export class HomeComponent implements OnInit {
   }
 
   public navigateToOrder() {
-    console.log(this.orderId);
+    // console.log(this.orderId);
     this.router.navigate(['order-data', this.orderId]);
-    console.log(this.ttt.myEnumValue);
-    console.log(this.ttt.myEnumTwoValue);
+    // console.log(this.ttt.myEnumValue);
+    // console.log(this.ttt.myEnumTwoValue);
   }
 
-
+  public navigateToAbout() {
+    this.router.navigate(['about'], {queryParams: {'customQuery': 6456, 'secondQueryParams': 200}});
+  }
 
 
 }
