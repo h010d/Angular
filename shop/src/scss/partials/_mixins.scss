@@ -1,0 +1,101 @@
+@import "params";
+
+@mixin clear {
+  margin  : 0;
+  padding : 0;
+  }
+@mixin fill {
+  height: 100%;
+  width: 100%;
+  }
+@mixin clear-list {
+  @include clear;
+  list-style : none;
+  }
+@mixin outline-all ($color: red){
+  outline: 1px dotted $color;
+  }
+@mixin clearfix-after{
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+  }
+@mixin flex-center($dir: column) {
+  display         : flex;
+  flex-direction  : $dir;
+  justify-content : center;
+  align-items     : center;
+  }
+
+@mixin border-none {
+  border : none;
+  }
+
+@mixin select-arrow-none {
+  webkit-appearance : none;
+  -moz-appearance   : none;
+  appearance        : none;
+  }
+
+@mixin font-reg($size: 16px, $font-weight: 500) {
+  font-size   : $size;
+  font-family : Poppins;
+  font-weight : $font-weight;
+
+  }
+@mixin block-width {
+  width     : $block-width;
+  max-width : $block-max-width;
+  margin    : 0 auto;
+  }
+
+@mixin header-color ($opacity: 0.7){
+  opacity     : $opacity;
+  color       : #000000;
+  font-family : Poppins;
+  font-size   : 20px;
+  font-weight : 500;
+  line-height : 26px;
+  }
+
+@mixin header-style-select {
+  -webkit-appearance : none;
+  -moz-appearance    : none;
+  appearance         : none;
+  border             : none;
+  background-color   : transparent;
+  position           : relative;
+  }
+
+@mixin header-style-select-after ($color : #333) {
+  content        : "";
+  border-style   : solid;
+  
+  opacity     : 0.7;
+  border-width   : 6px 6px 0 6px;
+  border-color   : $color transparent transparent transparent;
+  pointer-events : none;
+  position       : absolute;
+  top            : 50%;
+  right          : -6%;
+  z-index        : 1;
+  transform      : translate3d(-50%, -50%, 0);
+  }
+@mixin disable-border {
+  :active, :hover, :focus{
+    border: none;
+    outline: 0;
+    outline-offset: 0;
+    }
+  }
+@mixin disable-outline {
+    outline: 0;
+    outline-offset: 0;
+  }
+@mixin shop-icon {
+  height: $shop-icon-size;
+  width: $shop-icon-size;
+  font-size: $shop-icon-size;
+  }

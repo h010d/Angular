@@ -1,0 +1,13 @@
+<h3 class="name-item" >ID цвета  <span class="values"> {{id}}</span></h3>
+<h3 class="name-item" >Имя цвета <span class="values"> {{name}}</span></h3>
+<h3 class="name-item" >Стоимость <span class="values"> {{price}}</span></h3>
+<h3 class="name-item" >Уникальный ID <span class="values"> {{unID}}</span></h3>
+<h3 class="name-item" >Hash <span class="values"> {{hash}}</span></h3>
+
+<h4>
+  <a [routerLink]="['/colors', 9, 'white']">Открыть Белый цвет</a>
+
+</h4>
+<button class="btn btn-primary">
+  <a (click)="openPurplePage()">Открыть Пурпурный цвет</a>
+</button>

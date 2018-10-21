@@ -1,0 +1,42 @@
+@import "../../../scss/partials/params";
+@import "../../../scss/partials/mixins";
+
+.specials {
+  @include block-width;
+  height           : 435px;
+  background-color : white;
+  display          : flex;
+  justify-content  : space-between;
+  align-items      : center;
+  &-item {
+    display         : flex;
+    flex-direction  : column;
+    width           : 30vw;
+    justify-content : center;
+    .special-item__heading {
+      margin-left    : 40px;
+      display        : block;
+      width          : 15%;
+      color          : $font-color-white;
+      position       : absolute;
+      @include font-reg(28px, 300);
+      text-transform : uppercase;
+      z-index        : 1;
+      }
+    .special-item__link {
+      margin-left     : 40px;
+      margin-top      : 80px;
+      color           : $font-color-white;
+      position        : absolute;
+      @include font-reg(18px);
+      text-decoration : underline;
+      text-transform  : uppercase;
+      z-index         : 1;
+      }
+    .special-item__img {
+      position : relative;
+      width    : 30vw;
+      height   : 33vh;
+      }
+    }
+  }
