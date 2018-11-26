@@ -1,0 +1,21 @@
+
+<h2>Attribute directive</h2>
+<h4 [ngClass]="isTextValid() ? 'green-text' : 'red-text'"> Ng Class Attribute   Directive</h4>
+<input [(ngModel)]="inputValue">
+<hr>
+<h4>Custom  attributes  directive</h4>
+<input appCustomAttribute="">
+
+<hr>
+<h4 [ngStyle]="secondInputStyles">Ng Style Attribute</h4>
+<input (input)="onSecondInputValueChange()" [(ngModel)]="secondInputValue">
+<hr>
+<h4>Custom  attributes  directive with color</h4>
+<select [(ngModel)]="colorPickerCurrentValue">
+  <option value="green">Green</option>
+  <option value="red">Red</option>
+  <option value="yellow">Yellow</option>
+  <option value="black">Black</option>
+</select>
+<input appCustomAttribute [outerBorderColor]="colorPickerCurrentValue">
+

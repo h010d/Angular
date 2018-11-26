@@ -5,6 +5,9 @@ import {AboutComponent} from './components/about/about.component';
 import {HomeComponent} from './components/home/home.component';
 import {NotFoundPageComponent} from './components/not-found-page/not-found-page.component';
 import {FormsModule} from '@angular/forms';
+import {LoggerService} from './services/logger.service';
+import {HttpClientModule} from '@angular/common/http';
+import {DataCoreService} from './services/data-core.service';
 
 @NgModule({
   declarations: [
@@ -15,14 +18,16 @@ import {FormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    SharedAppModule
+    SharedAppModule,
+    HttpClientModule
 
   ],
   exports: [
     AboutComponent,
     HomeComponent,
     NotFoundPageComponent
-  ]
+  ],
+  // providers: [ // LoggerService,   // DataCoreService  ]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

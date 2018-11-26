@@ -1,0 +1,91 @@
+<div class="form-container">
+  <h1>Template driven approach</h1>
+  <form (ngSubmit)="onSubmit(form)"
+        #form="ngForm"
+        [ngFormOptions]="{updateOn: 'blur'}"
+  >
+
+    <div ngModelGroup="myCustomGroupObject">
+      <div class="form-row">
+        <label>Username</label>
+        <input
+          required
+          type="text"
+          [(ngModel)]="defaultUser.username"
+          name="username">
+      </div>
+
+      <div class="form-row">
+        <label>Email</label>
+        <input
+          type="email"
+          [(ngModel)]="defaultUser.email"
+          name="email"
+          required
+          pattern="{{EMAIL_PATTERN}}"
+          #email="ngModel"
+          [ngModelOptions]="{ updateOn: 'blur'}"
+        >
+      </div>
+      <div *ngIf="email.invalid">
+        <span>{{INCORRECT_EMAIL_LABEL}}</span>
+      </div>
+
+
+    </div>
+
+    <div class="form-row">
+      <label>Password: </label>
+      <input
+        type="password"
+        ngModel
+        name="password">
+    </div>
+
+    <div class="form-row">
+      <label>Confirm password: </label>
+      <input type="password"
+             ngModel
+             name="confirmPassword">
+    </div>
+
+    <div class="form-row">
+      <label>City: </label>
+      <select  [ngModel]="defaultUser.city" name="city">
+        <option [value]="availableCity.Kyiv">{{getEnumLabel(availableCity, availableCity.Kyiv)}}</option>
+        <option [value]="availableCity.Lviv">{{getEnumLabel(availableCity, availableCity.Lviv)}}</option>
+        <option [value]="availableCity.Kharkiv">{{getEnumLabel(availableCity, availableCity.Kharkiv)}}</option>
+        <option [value]="availableCity.Odessa">{{getEnumLabel(availableCity, availableCity.Odessa)}}</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Gender:</label>
+      <div class="radio-column">
+        <input
+          [ngModel]="defaultUser.gender"
+          id="male"
+          type="radio"
+          name="gender"
+          [value]="gender.Male">
+        <label for="male">{{getEnumLabel(gender, gender.Male)}}</label>
+
+        <input
+          [ngModel]="defaultUser.gender"
+          id="female"
+          type="radio"
+          name="gender"
+          [value]="gender.Female">
+        <label for="female">{{getEnumLabel(gender, gender.Female)}}</label>
+      </div>
+    </div>
+
+    <button [disabled]="form.invalid">
+      Submit
+    </button>
+
+  </form>
+</div>
+
+
+

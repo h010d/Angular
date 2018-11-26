@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {LoggerService} from '../core/services/logger.service';
+// import {DataSharedService} from '../shared-app/services/data-shared.service';
+import {DataCoreService} from '../core/services/data-core.service';
 
 @Component({
   selector: 'app-user',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loggerService: LoggerService,
+              private dataCoreService: DataCoreService) {
+    console.log(this.dataCoreService.getArray());
+  }
 
   ngOnInit() {
   }

@@ -21,7 +21,6 @@
 <p>{{ inputTextFour }}</p>
 
 <!--two way binding angular -->
-
 <input type="text" class="form-control" (keyup.enter)="onKeyUpFive($event)">
 <!-- [] () -->
 <p></p>
@@ -40,62 +39,59 @@
 <button class="btn btn-primary" (click)="addCarThree()">Добавить машину</button>
 <p *ngIf="!addCarStatusThree; else successStatus">Машина не добавлена!</p>
 <ng-template #successStatus>
-  <p>Машина добавлена!</p>
+    <p>Машина добавлена!</p>
 </ng-template>
 <hr>
 <!--Lesson 8 Директива ngFor-->
 <p>Lesson 8 Директива ngFor</p>
 <app-car *ngFor="let car of cars"></app-car>
 <ul>
-  <li *ngFor="let item of items; let idx = index">
-    <b>{{idx + 1}}</b> - <b>{{item.id}}</b> - <i>{{item.name}}</i>
-  </li>
+    <li *ngFor="let item of items; let idx = index">
+        <b>{{idx + 1}}</b> - <b>{{item.id}}</b> - <i>{{item.name}}</i>
+    </li>
 </ul>
 <hr>
 <!--Lesson 9 Директивы ngStyle и ngClass-->
 <p>Lesson 9 Директивы ngStyle и ngClass</p>
 <ul>
-  <li *ngFor="let car of cars; let idx = index">
-    <!--<div [ngStyle]="{'background-color': (idx + 1) % 2 === 0 ? 'red' : 'green', 'color': 'white'}"> <b>{{idx + 1}}</b> - <i>{{car}}</i>  </div>-->
-    <div
-      [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? 'red' : 'green', 'color': 'white'}"
-      [ngClass]="{'big-text': setBigCarText(car)}"
-    >
-      <b>{{idx + 1}}</b> - <i>{{car}}</i>
-    </div>
-  </li>
+    <li *ngFor="let car of cars; let idx = index">
+        <!--<div [ngStyle]="{'background-color': (idx + 1) % 2 === 0 ? 'red' : 'green', 'color': 'white'}"> <b>{{idx + 1}}</b> - <i>{{car}}</i>  </div>-->
+        <div [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? 'red' : 'green', 'color': 'white'}" [ngClass]="{'big-text': setBigCarText(car)}">
+            <b>{{idx + 1}}</b> - <i>{{car}}</i>
+        </div>
+    </li>
 </ul>
 <!--Lesson 10 Пайпы-->
 <p>Lesson 10 Пайпы</p>
 
 <ul>
-  <li *ngFor="let date of dates; let idx = index">
-    <div>
-      <b>{{idx + 1}}</b> - <i>{{dateOne | date}}</i>
-    </div>
-  </li>
+    <li *ngFor="let date of dates; let idx = index">
+        <div>
+            <b>{{idx + 1}}</b> - <i>{{dateOne | date}}</i>
+        </div>
+    </li>
 </ul>
 
 <ul>
-  <li *ngFor="let date of dates;  let idx = index">
-    <div>
-      <b>{{idx + 1}}</b> - <i>{{date | date:'short' }}</i>
-    </div>
-  </li>
+    <li *ngFor="let date of dates;  let idx = index">
+        <div>
+            <b>{{idx + 1}}</b> - <i>{{date | date:'short' }}</i>
+        </div>
+    </li>
 </ul>
 
 <ul>
-  <li *ngFor="let date of dates;  let idx = index">
-    <div>
-      <b>{{idx + 1}}</b> - <i>{{date | date:'medium' }}</i>
-    </div>
-  </li>
+    <li *ngFor="let date of dates;  let idx = index">
+        <div>
+            <b>{{idx + 1}}</b> - <i>{{date | date:'medium' }}</i>
+        </div>
+    </li>
 </ul>
 
 <ul>
-  <li *ngFor="let date of datesTwo;  let idx = index">
-    <div>
-      <b>{{idx + 1}}</b> - <i>{{date | uppercase }}</i>
-    </div>
-  </li>
+    <li *ngFor="let date of datesTwo;  let idx = index">
+        <div>
+            <b>{{idx + 1}}</b> - <i>{{date | uppercase }}</i>
+        </div>
+    </li>
 </ul>

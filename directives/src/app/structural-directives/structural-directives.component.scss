@@ -1,0 +1,16 @@
+@mixin box{
+  height:100px;
+  width: 100px;
+  }
+.color-box-yellow{
+     @include box;
+     background: yellow;
+     }
+.color-box-red{
+  @include box;
+  background: red;
+  }
+.color-box-green{
+  @include box;
+  background: green;
+  }

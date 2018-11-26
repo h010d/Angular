@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {LoggerService} from '../../services/logger.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,9 @@ export class HomeComponent implements OnInit {
 
   public orderId: number;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private loggerService: LoggerService) {
+    this.loggerService.logComponentCreatgion('Home Component');
   }
 
   ngOnInit() {

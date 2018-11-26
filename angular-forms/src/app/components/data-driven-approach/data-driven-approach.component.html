@@ -1,0 +1,98 @@
+<div class="form-container">
+  <h1>Data driven approach</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+    <div formGroupName="userData">
+      
+      <div class="form-row">
+        <label>Username </label>
+        <input type="text" formControlName="username">
+      </div>
+      
+      <div *ngIf="username.errors">
+        <div *ngIf="username.hasError('required')">
+          Username required!
+        </div>
+        
+        <div
+          *ngIf="!username.hasError('required') && username.hasError('onlyLetters')">
+          Only text allowed!
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" formControlName="email">
+      </div>
+    </div>
+    
+    <div class="form-row">
+      <label>Password: </label>
+      <input
+        type="password"
+        formControlName="password"
+      >
+    </div>
+    
+    <div class="form-row">
+      <label>Confirm password: </label>
+      <input
+        type="password"
+      >
+    </div>
+    
+    <div class="form-row">
+      <label>City: </label>
+      <select formControlName="city">
+        <option *ngFor="let iterationCity of parsedEnumLabels(availableCity)"
+                [value]="availableCity[iterationCity]">
+          {{iterationCity}}
+        </option>
+      </select>
+    </div>
+    
+    <div class="form-row">
+      <label>Gender:</label>
+      <div class="radio-column">
+        <input id="male" type="radio"
+               formControlName="gender"
+               [value]="gender.Male"
+        >
+        
+        <label for="male">Male</label>
+        <input id="female" type="radio"
+               formControlName="gender"
+               [value]="gender.Female"
+        >
+        
+        <label for="female">Female</label>
+      </div>
+    </div>
+    
+    <div formArrayName="phones">
+      <div class="form-row"
+           *ngFor="let phone of phones.controls; let i = index">
+        <label>Phone</label>
+        <input
+          type="text"
+          formControlName="{{i}}"
+        >
+      </div>
+    </div>
+    <div class="control-buttons">
+      <button (click)="addPhone()">Add phone</button>
+      <button (click)="onPatchValueClick()">Patch value</button>
+      <button (click)="onUpdateCityClick()">Update city</button>
+    </div>
+    
+    
+    <button [disabled]="loginForm.invalid" class="submit-button">
+    <!--<button class="submit-button">-->
+      Submit
+    </button>
+  
+  </form>
+</div>
+
+
+
