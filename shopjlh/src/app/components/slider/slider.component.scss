@@ -1,0 +1,109 @@
+@import "../../../scss/partials/params";
+@import "../../../scss/partials/mixins";
+
+
+.slider {
+  @include block-width;
+  display         : flex;
+  justify-content : space-between;
+  align-items     : center;
+  margin-top      : 40px;
+  height          : 900px;
+  
+  &__slides {
+    width : 90%;
+    .slides__slide {
+      .slide {
+        &__active {
+          
+          }
+        &__goods-info {
+          display         : flex;
+          flex-direction  : row;
+          justify-content : space-between;
+          align-items: center;
+          .goods-info {
+            display         : flex;
+            flex-direction  : column;
+            justify-content : start;
+            height          : 400px;
+            &__category {
+              opacity        : 0.5;
+              color          : $font-color-black;
+              @include font-reg(20px);
+              text-transform : uppercase;
+              }
+            &__heading {
+              display : flex;
+              .goods-info__title {
+                color          : $font-color-black;
+                @include font-reg(48px);
+                text-transform : uppercase;
+                }
+              .goods-info__brand {
+                margin-left    : 15px;
+                color          : $font-color-black;
+                @include font-reg(48px, 300);
+                text-transform : uppercase;
+                }
+              }
+            &__type {
+              color       : $font-color-black;
+              @include font-reg(42px, 300);
+              }
+            &__btn {
+              margin-top    : 3%;
+              height        : 70px;
+              width         : 39%;
+              background    : transparent;
+              border        : 3px solid $background-color-blue;
+              @include font-reg(24px);
+              color         : $font-color-blue;
+              border-radius : 4px;
+              outline       : none;
+              cursor        : pointer;
+              }
+            }
+          .slide__goods-img {
+            
+            }
+          }
+        }
+        
+      }
+    }
+  &__controls {
+    height : 10%;
+    .slider_control {
+      width         : 20px;
+      height        : 20px;
+      border        : 2px solid $background-color-blue;
+      border-radius : 50%;
+      position      : relative;
+      cursor        : pointer;
+      }
+    .slider_control--active {
+      //background-color : $background-color-blue;
+      }
+    .slider_control:before,
+    .slider_control:after {
+      content          : "";
+      position         : absolute;
+      width            : 120%;
+      height           : 120%;
+      right            : -2px;
+      background-color : inherit;
+      border-radius    : inherit;
+      border           : inherit;
+      }
+    .slider_control:before {
+      top : 200%;
+      }
+    .slider_control:after {
+      top : -220%;
+      }
+      
+    }
+    
+  }
+

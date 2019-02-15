@@ -1,0 +1,56 @@
+@import "../../../scss/partials/params";
+@import "../../../scss/partials/mixins";
+
+.month-deals {
+  @include block-width;
+  &__slide {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    .month-deals-slide {
+      //background-color: #b0c47f;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      width: 21%;
+      margin-top: 30px;
+      padding: 30px;
+      
+      &__label {
+        width: 90%;
+        //background-color: white;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        @include font-reg(22px, 300);
+        color: $font-color-light-grey;
+        //display: none;
+        .month-deals-slide__label-head{
+          @include font-reg(20px);
+          color: $font-color-black;
+          }
+        }
+      &__img {
+        width  : 240px;
+        height : 240px;
+        }
+      &__prices {
+        }
+      &__heading {
+        }
+      &__avail {
+        }
+      &__indicator {
+        }
+        
+      }
+    }
+  }

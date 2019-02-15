@@ -1,0 +1,97 @@
+<!--<button  disabled="{{!canAddCar}}" кнопка не включится потому что применяется только 1 раз  class="btn btn-primary">Добавить машину</button>-->
+<!--<button  [disabled]="!canAddCar" кнопка включится через 4 сек  class="btn btn-primary">Добавить машину</button>-->
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<p>{{addCarStatus}}</p>
+
+<hr>
+<app-car></app-car>
+<app-car></app-car>
+<hr>
+<!-- input or keyup-->
+<input type="text" class="form-control" (input)="onKeyUpOne($event)">
+<p>{{ inputTextOne }}</p>
+
+<input type="text" class="form-control" #myInp (input)="onKeyUpTwo(myInp.value)">
+<p>{{ inputTextTwo }}</p>
+
+<input type="text" class="form-control" (keyup)="onKeyUpThree($event)">
+<p>{{ inputTextThree }}</p>
+
+<input type="text" class="form-control" (keyup.enter)="onKeyUpFour($event)">
+<p>{{ inputTextFour }}</p>
+
+<!--two way binding angular -->
+<input type="text" class="form-control" (keyup.enter)="onKeyUpFive($event)">
+<!-- [] () -->
+<p></p>
+<input type="text" class="form-control" [(ngModel)]="inputTextFive">
+
+<p>{{ inputTextFive }}</p>
+<hr>
+<!--Lesson 7 Директива ngif else -->
+<p>Lesson 7 Директива ngif else</p>
+<input type="text" class="form-control" [(ngModel)]="carNameTwo">
+<button class="btn btn-primary" (click)="addCarTwo()">Добавить машину</button>
+<p *ngIf="!addCarStatusTwo">Машина не добавлена!</p>
+<p *ngIf="addCarStatusTwo">Машина добавлена!</p>
+<hr>
+<input type="text" class="form-control" [(ngModel)]="carNameThree">
+<button class="btn btn-primary" (click)="addCarThree()">Добавить машину</button>
+<p *ngIf="!addCarStatusThree; else successStatus">Машина не добавлена!</p>
+<ng-template #successStatus>
+    <p>Машина добавлена!</p>
+</ng-template>
+<hr>
+<!--Lesson 8 Директива ngFor-->
+<p>Lesson 8 Директива ngFor</p>
+<app-car *ngFor="let car of cars"></app-car>
+<ul>
+    <li *ngFor="let item of items; let idx = index">
+        <b>{{idx + 1}}</b> - <b>{{item.id}}</b> - <i>{{item.name}}</i>
+    </li>
+</ul>
+<hr>
+<!--Lesson 9 Директивы ngStyle и ngClass-->
+<p>Lesson 9 Директивы ngStyle и ngClass</p>
+<ul>
+    <li *ngFor="let car of cars; let idx = index">
+        <!--<div [ngStyle]="{'background-color': (idx + 1) % 2 === 0 ? 'red' : 'green', 'color': 'white'}"> <b>{{idx + 1}}</b> - <i>{{car}}</i>  </div>-->
+        <div [ngStyle]="{backgroundColor: (idx + 1) % 2 === 0 ? 'red' : 'green', 'color': 'white'}" [ngClass]="{'big-text': setBigCarText(car)}">
+            <b>{{idx + 1}}</b> - <i>{{car}}</i>
+        </div>
+    </li>
+</ul>
+<!--Lesson 10 Пайпы-->
+<p>Lesson 10 Пайпы</p>
+
+<ul>
+    <li *ngFor="let date of dates; let idx = index">
+        <div>
+            <b>{{idx + 1}}</b> - <i>{{dateOne | date}}</i>
+        </div>
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let date of dates;  let idx = index">
+        <div>
+            <b>{{idx + 1}}</b> - <i>{{date | date:'short' }}</i>
+        </div>
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let date of dates;  let idx = index">
+        <div>
+            <b>{{idx + 1}}</b> - <i>{{date | date:'medium' }}</i>
+        </div>
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let date of datesTwo;  let idx = index">
+        <div>
+            <b>{{idx + 1}}</b> - <i>{{date | uppercase }}</i>
+        </div>
+    </li>
+</ul>

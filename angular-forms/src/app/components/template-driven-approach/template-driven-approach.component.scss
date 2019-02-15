@@ -1,0 +1,67 @@
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  .form-row {
+    display: flex;
+    margin-top: 3vh;
+    width: 404px;
+
+    input {
+      position: absolute;
+      margin-left: 200px;
+      width: 200px;
+      height: 25px;
+    }
+
+    label {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    select {
+      position: absolute;
+      margin-left: 200px;
+      width: 204px;
+      height: 32px;
+    }
+
+    .radio-column {
+      display: block;
+      width: 100px;
+
+      input {
+        margin-left: 145px;
+        height: 15px;
+      }
+
+      label {
+        margin-left: 142px;
+      }
+    }
+
+    .ng-invalid {
+      border: 1px solid red;
+    }
+
+  }
+
+
+  #submit {
+    width: 200px;
+    height: 30px;
+    background: cornsilk;
+    border-radius: 11px;
+    margin-left: 94px;
+    margin-top: 30px;
+  }
+
+}
